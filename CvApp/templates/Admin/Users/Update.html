@@ -1,0 +1,22 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Kullanıcı Güncelle</h2>
+    {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post">
+    <dl>
+        <label style="font-weight: bold;">Mevcut Şifre</label>
+        <input style="margin-bottom:15px;" type="password" name="oldpassword" required=""  class="form-control">
+        <label style="font-weight: bold;">E-Posta</label>
+        <input style="margin-bottom:15px;" type="email" required="" name="oldemail"  disabled value="{{email}}" class="form-control">
+        {{ render_field(form.name, class="form-control") }}
+        {{ render_field(form.password, class="form-control") }}
+        {{ render_field(form.confirm, class="form-control") }}
+    </dl>
+    <input type="submit" class="btn btn-primary form-control" value="Kaydet">
+    </form>
+</div>
+
+{% endblock body %}

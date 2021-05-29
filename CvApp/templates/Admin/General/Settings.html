@@ -1,0 +1,25 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Site Ayarları</h2>
+    {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post">
+    <dl>
+        {{ render_field(form.siteTitle,class="form-control") }}
+        {{ render_field(form.siteSubTitle, class="form-control") }}
+        {{ render_field(form.siteKeyword, class="form-control") }}
+        <label><b>Site Bakım</b></label><br>
+        {% if bakim == 0 %}
+            <a href="/Nedmin/Maintenance/1"  class="btn btn-success">Aktif</a>
+            <input type="submit" disabled  class="btn btn-danger" value="Pasif">
+        {% else %}
+            <input type="submit" disabled  class="btn btn-success" value="Aktif">
+            <a href="/Nedmin/Maintenance/0"  class="btn btn-danger">Pasif</a>
+        {% endif %}
+    </dl>
+    <input type="submit"  class="btn btn-primary form-control" value="Kaydet">
+    </form>
+</div>
+{% endblock body %}

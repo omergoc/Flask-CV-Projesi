@@ -1,0 +1,43 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+    
+<div class="col-6 mx-auto">
+    <h2 class="text-center">Yetenek Ekle</h2>
+    {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post">
+        <dl>
+         {{ render_field(form.abilityValue, class="form-control") }}
+        </dl>
+        <input type="submit" maxlength="100" value="Yetenek Ekle" class="form-control btn btn-success" />
+    </form>
+    <br /><br />
+    <h2 class="text-center">Yetenekler Listesi</h2>
+    <br />
+    {% if data == 1  %}
+    <div class="alert alert-warning" role="alert">
+    Yetenek Bulunamadı
+    </div>
+    {% else %}
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ad</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for key in data %}
+            <tr>
+                <th scope="row">{{key[0]}}</th>
+                <td>{{key[1]}}</td>
+                <td><a href="/Nedmin/Ability/Delete/{{key[0]}}" class="btn btn-danger">Sil</a></td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+</div>
+{% endblock body %}

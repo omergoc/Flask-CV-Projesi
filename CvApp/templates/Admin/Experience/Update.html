@@ -1,0 +1,22 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Deneyim Güncelle</h2>
+    {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post">
+        <dl>
+        {{ render_field(form.experienceTitle,class="form-control") }}
+        {{ render_field(form.experienceSubTitle, class="form-control") }}
+        {{ render_field(form.experienceDetail, class="form-control") }}
+        <label style="font-weight: bold;">Başlangıç</label>
+        <input type="date" required=""  name="start" class="form-control" value="{{ start }}"  />
+        <label style="margin-top:10px; font-weight: bold;">Bitiş</label>
+        <input type="date" required="" name="end" class="form-control" value="{{ end }}"  />
+        </dl>
+        <input type="submit" value="Deneyim Güncelle" class="form-control btn btn-success" />
+    </form>
+</div>
+
+{% endblock body %}

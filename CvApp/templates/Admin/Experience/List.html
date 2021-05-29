@@ -1,0 +1,43 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<h1>Deneyimler Listesi</h1>
+<br />
+{% include "Admin/Shared/Messages.html" %}
+    {% if data == 1  %}
+    <div class="alert alert-warning" role="alert">
+    Deneyimler Bulunamadı
+    </div>
+    {% else %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Alt Başlık</th>
+            <th scope="col">Detay</th>
+            <th scope="col">Baslangiç</th>
+            <th scope="col">Bitiş</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for key in data %}
+        <tr>
+            <th scope="row">{{ key[0] }}</th>
+            <td>{{ key[1] }}</td>
+            <td>{{ key[2] }}</td>
+            <td>{{ key[3] }}</td>
+            <td>{{ key[4] }}</td>
+            <td>{{ key[5] }}</td>
+            <td><a href="/Nedmin/Experience/Delete/{{ key[0] }}" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Nedmin/Experience/Update/{{ key[0] }}" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+{% endblock body %}

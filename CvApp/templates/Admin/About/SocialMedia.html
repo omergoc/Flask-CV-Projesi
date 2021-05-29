@@ -1,0 +1,20 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Sosyal Medya Ayarları</h2>
+    {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post">
+    <dl>
+        {{ render_field(form.facebookLink,class="form-control") }}
+        {{ render_field(form.twitterLink, class="form-control") }}
+        {{ render_field(form.instagramLink, class="form-control") }}
+        {{ render_field(form.linkedinLink, class="form-control") }}
+        {{ render_field(form.githubLink, class="form-control") }}
+    </dl>
+    <input type="submit" class="btn btn-primary form-control" value="Kaydet">
+    </form>
+</div>
+
+{% endblock body %}

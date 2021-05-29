@@ -1,0 +1,27 @@
+{% extends "Admin/Shared/Layout.html" %}
+{% block body %}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Hakkında Ayarlar</h2>
+        {% include "Admin/Shared/Messages.html" %}
+    {% from "Admin/Shared/formhelpers.html" import render_field %}
+    <form method="post" enctype="multipart/form-data">
+    <dl>
+        {{ render_field(form.aboutName, class="form-control") }}
+        {{ render_field(form.aboutSubname, class="form-control") }}
+        {{ render_field(form.aboutEmail, class="form-control") }}
+        {{ render_field(form.aboutTelephone, class="form-control") }}
+        {{ render_field(form.aboutCountry, class="form-control") }}
+        {{ render_field(form.aboutCity, class="form-control") }}
+        {{ render_field(form.aboutAdress, class="form-control") }}
+        {{ render_field(form.aboutDetails, class="form-control") }}
+        </dl>
+        <div class="form-group">
+            <b><label>Resim</label></b><br>
+            <img src="../../static/img/{{ photo }}" alt="resim" width="80" />
+            <input style="margin-top:10px;" type="file" name="file" class="form-control" />
+        </div>
+        <input type="submit" value="Kaydet" class="form-control btn btn-primary" />
+        </form>
+</div>
+{% endblock body %}

@@ -1,6 +1,6 @@
 Python Flask Projesi <br>
 Back-End Tarafımca Kodlanmıştır. <br>
-Hazır Tasarımlar Kullanılmıştır. <br>
+Hazır Tasarımları Kendimce Düzenleyip Kullandım. <br>
 Proje Tamamen Dinamik Yapıdır.<br><br>
 
 <b>Kullanılan Teknoloji:</b> Python (Flask Framework) <br>

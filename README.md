@@ -1,6 +1,8 @@
 Python Flask Projesi <br>
 Back-End Tarafımca Kodlanmıştır. <br>
-Hazır Tasarımlar Kullanılmıştır. <br><br><br>
+Hazır Tasarımlar Kullanılmıştır. <br>
+Proje Tamamen Dinamik Yapıdır.<br><br>
+
 <b>Kullanılan Teknoloji:</b> Python (Flask Framework) <br>
 <b>Veritabanı:</b> Mysql <br>
 <b>Login Paneli:</b> /Nedmin/Login <br>
